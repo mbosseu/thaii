@@ -1,32 +1,41 @@
 import Image from "next/image";
-import { Breadcrumbs } from "@/components/Ui";
-import type { Crumb } from "@/lib/site";
+import type { ReactNode } from "react";
+
+type PageHeroProps = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt?: string;
+  meta?: ReactNode;
+};
 
 export function PageHero({
-  crumbs,
+  eyebrow,
   title,
-  lead,
+  description,
   image,
-  imageAlt,
-}: {
-  crumbs: Crumb[];
-  title: string;
-  lead: string;
-  image?: string;
-  imageAlt?: string;
-}) {
+  imageAlt = "",
+  meta,
+}: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden border-b border-white/10">
-      {image ? (
-        <div className="absolute inset-0">
-          <Image src={image} alt={imageAlt || ""} fill priority className="object-cover opacity-35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
-        </div>
-      ) : null}
-      <div className="container-site relative py-14 md:py-20">
-        <Breadcrumbs items={crumbs} />
-        <h1 className="max-w-4xl text-5xl text-white md:text-7xl">{title}</h1>
-        <p className="mt-4 max-w-2xl text-lg text-muted">{lead}</p>
+    <section className="relative overflow-hidden border-b border-border">
+      <div className="absolute inset-0">
+        <Image src={image} alt={imageAlt} fill priority sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/88 to-background/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+      </div>
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+        <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          {eyebrow}
+        </p>
+        <h1 className="animate-fade-up animate-delay-1 mt-3 max-w-3xl font-display text-4xl text-cream sm:text-6xl">
+          {title}
+        </h1>
+        <p className="animate-fade-up animate-delay-2 mt-4 max-w-2xl font-serif text-base leading-relaxed text-muted sm:text-lg">
+          {description}
+        </p>
+        {meta ? <div className="animate-fade-up animate-delay-3 mt-5">{meta}</div> : null}
       </div>
     </section>
   );

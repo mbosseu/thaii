@@ -1,0 +1,1 @@
+export { getCotes } from "./content";

@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "boxing-center-toulouse",
+    "name": "Boxing Center Toulouse",
+    "shortName": "Boxing Center",
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "address": "Plusieurs salles : Saint-Cyprien, États-Unis, Minimes, Ramonville, Portet-sur-Garonne",
+    "website": "https://boxingcenter.fr/",
+    "image": "/images/clubs/saint-cyprien-hero.webp",
+    "imageCredit": "Boxing Center",
+    "imageAlt": "Salle Boxing Center Saint-Cyprien Toulouse",
+    "summary": "Réseau de salles de sports de combat à Toulouse proposant Boxe Thaï / Muay Thaï, Kick Boxing, K1 et boxe pieds-poings, avec un encadrement diplômé affilié FFKMDA.",
+    "disciplines": ["Boxe Thaï / Muay Thaï", "Kick Boxing", "K1", "Boxe Pieds-Poings", "Boxe anglaise", "MMA"],
+    "coaches": ["Jérôme", "Renaud"],
+    "highlights": [
+      "Affilié FFKMDA pour le Muay Thaï / kick-boxing",
+      "Plusieurs salles en métropole toulousaine",
+      "Cours débutants et compétiteurs"
+    ],
+    "allowExternalBacklink": true
+  }
+]

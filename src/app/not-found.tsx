@@ -2,20 +2,15 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="container-site py-24">
-      <p className="text-xs uppercase tracking-[0.2em] text-gold">404</p>
-      <h1 className="text-6xl text-white">Page introuvable</h1>
-      <p className="mt-4 max-w-xl text-muted">
-        Cette URL n’existe pas. Revenez à l’accueil ou ouvrez le guide de la boxe thaï.
+    <div className="mx-auto flex max-w-6xl flex-col items-start px-4 py-24 sm:px-6">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">404</p>
+      <h1 className="mt-3 font-display text-4xl text-cream sm:text-6xl">Page introuvable</h1>
+      <p className="mt-4 max-w-md font-serif text-muted">
+        Cette page n&apos;existe pas ou a été déplacée.
       </p>
-      <div className="mt-8 flex gap-4">
-        <Link href="/" className="rounded-sm bg-orange px-5 py-3 font-semibold text-black no-underline">
-          Accueil
-        </Link>
-        <Link href="/boxe-thai/" className="rounded-sm border border-white/20 px-5 py-3 text-white no-underline">
-          Qu’est-ce que la boxe thaï ?
-        </Link>
-      </div>
+      <Link href="/" className="btn-primary mt-8">
+        Retour à l&apos;accueil
+      </Link>
     </div>
   );
 }

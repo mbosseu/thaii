@@ -1,0 +1,1 @@
+export { getChampions } from "./content";

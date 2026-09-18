@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "buakaw-banchamek",
+    "name": "Buakaw Banchamek",
+    "nationality": "Thaïlande",
+    "weightClass": "Poids welters / moyens",
+    "stance": "Orthodoxe",
+    "record": "Légende K-1 / Muay Thaï — palmarès évolutif",
+    "image": "/images/covers/combat.webp",
+    "imageCredit": "Photo d’ambiance fournie pour boxe-thai.com",
+    "imageAlt": "Ambiance combat pieds-poings",
+    "bio": "Buakaw Banchamek est l’une des figures les plus reconnues du Muay Thaï moderne et du K-1. Sa carrière, marquée par des titres majeurs et une longévité exceptionnelle, a popularisé la boxe thaïlandaise à l’échelle mondiale.",
+    "highlights": [
+      "Double champion K-1 World MAX",
+      "Ambassadeur mondial du Muay Thaï",
+      "Camp Banchamek en Thaïlande"
+    ],
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Buakaw_Banchamek"
+    ]
+  },
+  {
+    "slug": "saenchai",
+    "name": "Saenchai",
+    "nationality": "Thaïlande",
+    "weightClass": "Poids légers / welters",
+    "stance": "Orthodoxe",
+    "record": "Légende technique du Muay Thaï",
+    "image": "/images/covers/danse-wai-kru.webp",
+    "imageCredit": "Illustration Wai Kru — boxe-thai.com",
+    "imageAlt": "Rituel et tradition du Muay Thaï",
+    "bio": "Saenchai est considéré comme l’un des techniciens les plus inventifs de l’histoire du Muay Thaï. Sa créativité sur le ring — timing, angles, kicks non conventionnels — en a fait une référence pour les pratiquants du monde entier.",
+    "highlights": [
+      "Multiple champion Lumpinee",
+      "Réputé pour sa créativité technique",
+      "Référence pédagogique internationale"
+    ],
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Saenchai"
+    ]
+  },
+  {
+    "slug": "youssef-boughanem",
+    "name": "Youssef Boughanem",
+    "nationality": "Belgique",
+    "weightClass": "Poids moyens",
+    "stance": "Orthodoxe",
+    "record": "Champion en Thaïlande — voir sources",
+    "image": "/images/covers/boxe-thai-1.webp",
+    "imageCredit": "Photo d’entraînement — Boxing Center / boxe-thai.com",
+    "imageAlt": "Travail technique pieds-poings",
+    "bio": "Combattant belgo-marocain, Youssef Boughanem s’est imposé en Thaïlande en remportant plusieurs titres dans des stades mythiques. Il figure parmi les étrangers les plus titrés du Muay Thaï contemporain.",
+    "highlights": [
+      "Titres Lumpinee et Rajadamnern",
+      "Parcours européen et thaïlandais",
+      "Référence pour les combattants expatriés"
+    ],
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Youssef_Boughanem"
+    ]
+  },
+  {
+    "slug": "dida-diafat",
+    "name": "Dida Diafat",
+    "nationality": "France",
+    "weightClass": "Poids légers / welters",
+    "stance": "Orthodoxe",
+    "record": "Pionnier français du Muay Thaï",
+    "image": "/images/covers/boxe-thai-2.webp",
+    "imageCredit": "Photo d’entraînement — boxe-thai.com",
+    "imageAlt": "Cours de boxe thaï",
+    "bio": "Dida Diafat compte parmi les pionniers français du Muay Thaï. Son parcours en Thaïlande et sa médiatisation en France ont contribué à populariser la discipline auprès du grand public.",
+    "highlights": [
+      "Pionnier du Muay Thaï en France",
+      "Expérience des camps thaïlandais",
+      "Ambassadeur médiatique de la discipline"
+    ],
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Dida_Diafat"
+    ]
+  }
+]

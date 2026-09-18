@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "jerome-boxe-thai",
+    "name": "Jérôme",
+    "club": "Boxing Center Toulouse",
+    "clubSlug": "boxing-center-toulouse",
+    "city": "Toulouse",
+    "image": "/images/fighters/coach-jerome.webp",
+    "imageCredit": "Boxing Center",
+    "imageAlt": "Coach Jérôme — boxe thaï",
+    "bio": "Spécialiste de la Boxe Thaï et du MMA, il a combattu professionnellement au Canada et en Thaïlande. Il enseigne au Boxing Center à Toulouse.",
+    "method": "Transmission technique, respect des bases Muay Thaï, progression adaptée du loisir à la compétition."
+  },
+  {
+    "slug": "renaud-pieds-poings",
+    "name": "Renaud",
+    "club": "Boxing Center États-Unis",
+    "clubSlug": "boxing-center-toulouse",
+    "city": "Toulouse",
+    "image": "/images/fighters/coach-renaud.webp",
+    "imageCredit": "Boxing Center",
+    "imageAlt": "Coach Renaud — pieds-poings",
+    "bio": "Plusieurs fois champion de France en full-contact et kick-boxing. Coach référent en boxe pieds-poings à Toulouse États-Unis.",
+    "method": "Exigence et pédagogie : volume pieds-poings, rythme K1, bases solides pour tous les niveaux."
+  }
+]

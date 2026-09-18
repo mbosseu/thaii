@@ -1,0 +1,19 @@
+{
+  "lastUpdated": "2026-09-18",
+  "disclaimer": "Cette rubrique propose une analyse éditoriale sportive. Elle ne constitue ni une incitation au pari, ni un conseil de mise.",
+  "fights": [
+    {
+      "id": "analyse-style-thai-vs-k1",
+      "fighter1": "Style Muay Thaï",
+      "fighter2": "Style K1",
+      "fighter1Slug": null,
+      "fighter2Slug": null,
+      "date": "2026-09-18",
+      "event": "Analyse de style — règlement pieds-poings",
+      "percent1": 52,
+      "percent2": 48,
+      "editorial": "Sur un combat pieds-poings, le clinch et les coudes avantagent le Muay Thaï ; le volume striking et le rythme avantagent souvent le K1. Tout dépend du règlement de la soirée et du niveau d’adaptation des deux combattants.",
+      "stance": "Légère préférence éditoriale pour le style Muay Thaï si le clinch est autorisé ; avantage K1 si le règlement coupe le corps-à-corps."
+    }
+  ]
+}

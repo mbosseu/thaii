@@ -1,0 +1,51 @@
+{
+  "lastUpdated": "2026-09-18",
+  "upcoming": [
+    {
+      "id": "gala-pieds-poings-toulouse",
+      "fighter1": "À confirmer",
+      "fighter2": "À confirmer",
+      "fighter1Slug": null,
+      "fighter2Slug": null,
+      "date": "2026-11-15",
+      "venue": "Toulouse et périphérie",
+      "event": "Gala pieds-poings — calendrier régional",
+      "title": "Affiche à confirmer",
+      "weightClass": "—",
+      "status": "à confirmer",
+      "sources": ["https://boxingcenter.fr/"]
+    },
+    {
+      "id": "one-championship-watch",
+      "fighter1": "Card ONE Championship",
+      "fighter2": "Muay Thaï / Kick",
+      "fighter1Slug": null,
+      "fighter2Slug": null,
+      "date": "2026-10-30",
+      "venue": "Circuit international (selon organisation)",
+      "event": "ONE Championship — suivi Muay Thaï",
+      "title": "Suivi éditorial",
+      "weightClass": "Multi-catégories",
+      "status": "annoncé",
+      "sources": ["https://www.onefc.com/"]
+    }
+  ],
+  "results": [
+    {
+      "id": "demo-result-thai",
+      "date": "2026-08-20",
+      "event": "Gala pieds-poings — France",
+      "venue": "France",
+      "fighter1": "Combattant A",
+      "fighter2": "Combattant B",
+      "fighter1Slug": null,
+      "result": "Victoire A",
+      "method": "Décision",
+      "rounds": "3×3 min",
+      "scorecards": "—",
+      "weightClass": "Welters",
+      "title": null,
+      "sources": []
+    }
+  ]
+}

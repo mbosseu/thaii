@@ -1,0 +1,32 @@
+{
+  "lastUpdated": "2026-09-18",
+  "note": "Aperçu éditorial pieds-poings. Vérifier les sources officielles avant chaque mise à jour. Pas de titres inventés.",
+  "organizations": [
+    {
+      "id": "one",
+      "name": "ONE",
+      "fullName": "ONE Championship — Muay Thaï / Kick",
+      "champions": [
+        {
+          "weightClass": "Muay Thaï (référence)",
+          "name": "Voir classements ONE",
+          "nationality": "—",
+          "since": "—"
+        }
+      ]
+    },
+    {
+      "id": "ffkmda",
+      "name": "FFKMDA",
+      "fullName": "Fédération Française de Kick Boxing, Muay Thaï et Disciplines Associées",
+      "champions": [
+        {
+          "weightClass": "Titres France",
+          "name": "Selon calendrier fédéral",
+          "nationality": "France",
+          "since": "—"
+        }
+      ]
+    }
+  ]
+}

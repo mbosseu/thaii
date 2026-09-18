@@ -1,209 +1,207 @@
+import { ArticleCard } from "@/components/ArticleCard";
+import { ArticleList } from "@/components/ArticleList";
+import { FightCard } from "@/components/FightCard";
+import { NewsletterBlock } from "@/components/NewsletterBlock";
+import { RubriquesShowcase } from "@/components/RubriquesShowcase";
+import { SectionHeader } from "@/components/SectionHeader";
+import { formatDate, getAllArticles } from "@/lib/articles";
+import { getBoxers, getFights } from "@/lib/content";
+import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
-import { BoxingCenterBlock } from "@/components/BoxingCenterBlock";
-import { CtaBand, JsonLd, SectionHeading } from "@/components/Ui";
-import { posts } from "@/lib/blog";
-import { faqs } from "@/lib/faq";
-import { pageMeta, breadcrumbJsonLd } from "@/lib/seo";
-import { site } from "@/lib/site";
-
-export const metadata = pageMeta({
-  title: "Boxe Thaï : découvrez le Muay Thaï",
-  description:
-    "Guide de la boxe thaï et du Muay Thaï : techniques des huit membres, débuter, s’entraîner, et cours à Toulouse au Boxing Center.",
-  path: "/",
-  image: "/images/entrainement/combat.webp",
-});
-
-const limbs = [
-  { title: "Poings", text: "Jab, direct, crochet, uppercut : la base de la distance et des ouvertures." },
-  { title: "Pieds", text: "Low kick, middle kick, high kick et teep pour frapper, stopper ou tenir à distance." },
-  { title: "Genoux", text: "Frappes courtes au corps et à la tête, souvent préparées par le clinch." },
-  { title: "Coudes", text: "Armes courtes, coupantes, utilisées à mi-distance avec un contrôle strict en club." },
-];
 
 export default function HomePage() {
+  const articles = getAllArticles();
+  const featured = articles.slice(0, 5);
+  const analyses = articles.filter((a) => a.category === "analyses").slice(0, 3);
+  const guides = articles.filter((a) => a.category === "guides").slice(0, 3);
+  const portraits = articles.filter((a) => a.category === "clubs" || a.category === "combattants").slice(0, 3);
+  const fights = getFights();
+  const fighters = getBoxers().slice(0, 4);
+  const results = fights.results.slice(0, 4);
+
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([{ name: "Accueil", path: "/" }])} />
-      <section className="relative min-h-[88vh] overflow-hidden">
-        <Image
-          src="/images/entrainement/combat.webp"
-          alt="Cours de boxe thaï : échange pieds-poings au Boxing Center Toulouse"
-          fill
-          priority
-          className="object-cover"
+      <section className="mx-auto max-w-6xl px-4 pb-8 pt-8 sm:px-6 sm:pt-10">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+          <div className="flex items-center gap-4">
+            <Image src="/logo.png" alt="" width={64} height={64} className="rounded-full" priority />
+            <div>
+              <p className="font-display text-4xl text-cream sm:text-5xl">{siteConfig.name}</p>
+              <p className="mt-1 text-sm text-muted">{siteConfig.tagline}</p>
+            </div>
+          </div>
+          <Link href="/actualites" className="btn-ghost">
+            Toute l&apos;actualité →
+          </Link>
+        </div>
+        <ArticleList articles={featured} layout="magazine" />
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <SectionHeader
+          eyebrow="Calendrier"
+          title="Combats à venir"
+          description="Affiches pieds-poings suivies par la rédaction, avec statut clair."
+          href="/combats-a-venir"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/25" />
-        <div className="container-site relative flex min-h-[88vh] items-end pb-16 pt-28">
-          <div className="max-w-3xl">
-            <p className="mb-3 text-xs uppercase tracking-[0.28em] text-gold">boxe-thai.com</p>
-            <h1 className="text-6xl text-white md:text-8xl">Boxe Thaï : découvrez le Muay Thaï</h1>
-            <p className="mt-5 max-w-xl text-lg text-muted">
-              L’art des huit membres, expliqué sans jargon inutile : origines, techniques,
-              entraînement, et où le pratiquer à Toulouse.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/boxe-thai/"
-                className="rounded-sm bg-orange px-5 py-3 font-semibold text-black no-underline hover:bg-orange-hot"
-              >
-                Comprendre la discipline
-              </Link>
-              <Link
-                href="/boxe-thai-toulouse/"
-                className="rounded-sm border border-white/25 px-5 py-3 font-semibold text-white no-underline"
-              >
-                Cours de boxe thaï à Toulouse
-              </Link>
-            </div>
-          </div>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {fights.upcoming.map((fight) => (
+            <FightCard
+              key={fight.id}
+              fighter1={fight.fighter1}
+              fighter2={fight.fighter2}
+              fighter1Slug={fight.fighter1Slug}
+              fighter2Slug={fight.fighter2Slug}
+              date={formatDate(fight.date)}
+              venue={fight.venue}
+              event={fight.event}
+              status={fight.status}
+              href="/combats-a-venir"
+            />
+          ))}
         </div>
       </section>
 
-      <section className="container-site py-16">
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          <div>
-            <SectionHeading
-              eyebrow="La discipline"
-              title="Un sport complet, une culture vivante"
-              text="La boxe thaï — ou Muay Thaï — combine poings, pieds, genoux, coudes et clinch. C’est un sport de combat moderne, issu d’une tradition thaïlandaise, accessible en club sans obligation de combattre."
-            />
-            <div className="flex flex-wrap gap-4">
-              <Link href="/boxe-thai/">Qu’est-ce que la boxe thaï ?</Link>
-              <Link href="/muay-thai/">Page Muay Thaï</Link>
-              <Link href="/histoire-boxe-thai/">Histoire</Link>
-            </div>
-          </div>
-          <div className="img-frame aspect-[4/3] card-glow">
-            <Image
-              src="/images/entrainement/danse-wai-kru.webp"
-              alt="Wai Kru, rituel traditionnel du Muay Thaï"
-              width={900}
-              height={680}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-bg-2/80 py-16">
-        <div className="container-site">
-          <SectionHeading eyebrow="Huit membres" title="Les armes de la boxe thaï" />
-          <div className="grid gap-4 md:grid-cols-4">
-            {limbs.map((limb) => (
-              <article key={limb.title} className="border border-white/10 bg-bg-3 p-5">
-                <h3 className="text-3xl text-orange">{limb.title}</h3>
-                <p className="mt-3 text-sm text-muted">{limb.text}</p>
-              </article>
+      <section className="border-y border-border bg-surface/40 py-14">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionHeader
+            eyebrow="Scoreboard"
+            title="Derniers résultats"
+            href="/resultats"
+            linkLabel="Tous les résultats"
+          />
+          <div className="overflow-hidden rounded-[1.25rem] border border-border">
+            {results.map((r) => (
+              <div
+                key={r.id}
+                className="grid gap-2 border-b border-border px-4 py-4 last:border-b-0 sm:grid-cols-[7rem_1fr_auto] sm:items-center sm:px-6"
+              >
+                <time className="text-xs uppercase tracking-[0.14em] text-muted" dateTime={r.date}>
+                  {formatDate(r.date)}
+                </time>
+                <div>
+                  <p className="font-medium text-cream">
+                    {r.fighter1} <span className="text-muted">vs</span> {r.fighter2}
+                  </p>
+                  <p className="text-sm text-muted">
+                    {r.event}
+                    {r.title ? ` · ${r.title}` : ""}
+                  </p>
+                </div>
+                <div className="text-left sm:text-right">
+                  <span className="badge badge-accent">{r.result}</span>
+                  <p className="mt-1 text-xs text-muted">
+                    {r.method}
+                    {r.rounds ? ` · ${r.rounds}` : ""}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
-          <p className="mt-6">
-            <Link href="/techniques-boxe-thai/">Voir toutes les techniques de boxe thaï</Link>
-          </p>
         </div>
       </section>
 
-      <section className="container-site grid gap-8 py-16 md:grid-cols-2">
-        <article className="img-frame relative min-h-[340px]">
-          <Image
-            src="/images/entrainement/boxe-thai-header.webp"
-            alt="Débutant en cours de boxe thaï"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-          <div className="absolute bottom-0 p-6">
-            <h2 className="text-4xl text-white">Débuter sans expérience</h2>
-            <p className="mt-2 text-muted">
-              Niveau, âge, première séance, matériel : tout ce qu’il faut savoir avant de pousser la porte.
-            </p>
-            <Link href="/boxe-thai-debutant/" className="mt-3 inline-block text-gold">
-              Guide boxe thaï débutant
-            </Link>
-          </div>
-        </article>
-        <article className="img-frame relative min-h-[340px]">
-          <Image
-            src="/images/entrainement/boxe-thai-1.webp"
-            alt="Travail aux paos pendant un entraînement de Muay Thaï"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-          <div className="absolute bottom-0 p-6">
-            <h2 className="text-4xl text-white">Une séance type</h2>
-            <p className="mt-2 text-muted">
-              Échauffement, technique, paos, sac, physique, clinch, retour au calme.
-            </p>
-            <Link href="/entrainement-boxe-thai/" className="mt-3 inline-block text-gold">
-              Déroulé d’un entraînement
-            </Link>
-          </div>
-        </article>
-      </section>
-
-      <section className="bg-bg-2/80 py-16">
-        <div className="container-site">
-          <SectionHeading
-            eyebrow="Toulouse"
-            title="Boxe thaï à Toulouse"
-            text="Pour passer de la lecture à la pratique : un club, des cours, un encadrement. Le Boxing Center est le partenaire local de ce site."
-          />
-          <div className="grid gap-4 md:grid-cols-3">
-            <Link href="/boxe-thai-toulouse/" className="border border-white/10 bg-bg-3 p-6 no-underline">
-              <h3 className="text-3xl text-white">Cours, club, entraînement</h3>
-              <p className="mt-2 text-sm text-muted">Page SEO locale : comment s’entraîner à Toulouse.</p>
-            </Link>
-            <Link href="/club-boxe-thai-toulouse/" className="border border-white/10 bg-bg-3 p-6 no-underline">
-              <h3 className="text-3xl text-white">Trouver un club</h3>
-              <p className="mt-2 text-sm text-muted">Salles, critères de choix, informations vérifiées.</p>
-            </Link>
-            <Link href="/cours-boxe-thai-toulouse/" className="border border-white/10 bg-bg-3 p-6 no-underline">
-              <h3 className="text-3xl text-white">Les cours</h3>
-              <p className="mt-2 text-sm text-muted">Créneaux, niveaux, séance d’essai.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <BoxingCenterBlock />
-
-      <section className="container-site py-16">
-        <SectionHeading eyebrow="Journal" title="Articles récents" />
-        <div className="grid gap-6 md:grid-cols-3">
-          {posts.slice(0, 3).map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}/`} className="group no-underline">
-              <div className="img-frame aspect-[16/10]">
-                <Image src={post.image} alt={post.imageAlt} width={700} height={440} />
-              </div>
-              <h3 className="mt-4 text-2xl text-white group-hover:text-orange">{post.title}</h3>
-              <p className="mt-2 text-sm text-muted">{post.description}</p>
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <SectionHeader
+          eyebrow="Comprendre"
+          title="Disciplines"
+          description="Muay Thaï, Kick Boxing, K1, Boxe Pieds-Poings."
+          href="/disciplines"
+        />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { href: "/muay-thai", label: "Muay Thaï", text: "Huit membres, clinch, tradition." },
+            { href: "/kick-boxing", label: "Kick Boxing", text: "Poings + pieds, rythme club." },
+            { href: "/k1", label: "K1", text: "Kick-boxing moderne de galas." },
+            { href: "/pieds-poings", label: "Pieds-Poings", text: "Famille de disciplines." },
+          ].map((item) => (
+            <Link key={item.href} href={item.href} className="card-surface block p-5 no-underline transition-transform hover:-translate-y-1">
+              <p className="font-display text-2xl text-cream">{item.label}</p>
+              <p className="mt-2 text-sm text-muted">{item.text}</p>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="bg-bg-2/80 py-16">
-        <div className="container-site">
-          <SectionHeading eyebrow="Questions" title="FAQ" />
-          <div className="grid gap-4 md:grid-cols-2">
-            {faqs.slice(0, 4).map((item) => (
-              <article key={item.q} className="border border-white/10 p-5">
-                <h3 className="text-2xl text-white">{item.q}</h3>
-                <p className="mt-2 text-sm text-muted">{item.a}</p>
-              </article>
+      {analyses.length > 0 ? (
+        <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+          <SectionHeader eyebrow="Édito" title="Analyses" href="/analyses" />
+          <div className="grid gap-6 lg:grid-cols-3">
+            {analyses.map((article, i) => (
+              <ArticleCard key={article.slug} article={article} variant="analysis" index={i} />
             ))}
           </div>
-          <p className="mt-6">
-            <Link href="/faq/">Toutes les questions fréquentes</Link>
-          </p>
+        </section>
+      ) : null}
+
+      {guides.length > 0 ? (
+        <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+          <SectionHeader eyebrow="Pédagogie" title="Guides débutants" href="/guides" />
+          <div className="grid gap-6 lg:grid-cols-3">
+            {guides.map((article, i) => (
+              <ArticleCard key={article.slug} article={article} index={i} />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+        <SectionHeader eyebrow="Portraits" title="Combattants" href="/combattants" />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {fighters.map((fighter) => (
+            <Link
+              key={fighter.slug}
+              href={`/combattants/${fighter.slug}`}
+              className="group relative isolate min-h-[16rem] overflow-hidden rounded-[1.25rem] no-underline"
+            >
+              <Image
+                src={fighter.image}
+                alt={fighter.imageAlt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              <div className="relative z-10 flex h-full flex-col justify-end p-4">
+                <p className="font-display text-2xl text-white">{fighter.name}</p>
+                <p className="text-sm text-cream/80">
+                  {fighter.nationality} · {fighter.weightClass}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
-      <CtaBand
-        primaryHref={site.boxingCenterThaiUrl}
-        primaryLabel="Découvrir le Boxing Center"
-      />
+      {portraits.length > 0 ? (
+        <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+          <SectionHeader eyebrow="Terrains" title="Clubs & portraits" href="/clubs" />
+          <div className="grid gap-6 lg:grid-cols-3">
+            {portraits.map((article, i) => (
+              <ArticleCard key={article.slug} article={article} index={i} />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="border-y border-border bg-surface/50 py-14">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Communauté</p>
+            <h2 className="mt-2 font-display text-4xl text-cream">Forum</h2>
+            <p className="mt-2 max-w-xl text-muted">
+              Échangez sur les galas, clubs, entraînements et disciplines — avec une modération claire.
+            </p>
+          </div>
+          <Link href="/forum" className="btn-primary">
+            Entrer sur le forum
+          </Link>
+        </div>
+      </section>
+
+      <RubriquesShowcase />
+      <NewsletterBlock />
     </>
   );
 }
