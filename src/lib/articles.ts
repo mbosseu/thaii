@@ -96,7 +96,10 @@ export function getAllArticles(): ArticleMeta[] {
     .map((slug) => getArticleBySlug(slug))
     .filter((article): article is Article => article !== null)
     .sort((a, b) => (a.date < b.date ? 1 : -1))
-    .map(({ content: _content, ...meta }) => meta);
+    .map(({ content, ...meta }) => {
+      void content;
+      return meta;
+    });
 }
 
 export function getArticlesByCategory(category: CategorySlug): ArticleMeta[] {
