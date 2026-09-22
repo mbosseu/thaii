@@ -1,11 +1,12 @@
 import { ArticleCard } from "@/components/ArticleCard";
 import { ArticleList } from "@/components/ArticleList";
-import { FightCard } from "@/components/FightCard";
+import { FeatureBand } from "@/components/FeatureBand";
 import { NewsletterBlock } from "@/components/NewsletterBlock";
 import { RubriquesShowcase } from "@/components/RubriquesShowcase";
 import { SectionHeader } from "@/components/SectionHeader";
-import { formatDate, getAllArticles } from "@/lib/articles";
-import { getBoxers, getFights } from "@/lib/content";
+import { getAllArticles } from "@/lib/articles";
+import { getBoxers } from "@/lib/content";
+import { editorial } from "@/lib/media";
 import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,12 +14,22 @@ import Link from "next/link";
 export default function HomePage() {
   const articles = getAllArticles();
   const featured = articles.slice(0, 5);
-  const analyses = articles.filter((a) => a.category === "analyses").slice(0, 3);
+  const enjeux = articles.filter((a) => a.tags?.includes("enjeux"));
+  const enjeuxCorps = enjeux.filter((a) =>
+    a.tags?.some((t) => t === "santé" || t === "blessures" || t === "poids"),
+  );
+  const enjeuxVie = enjeux.filter((a) =>
+    a.tags?.some((t) => t === "précarité" || t === "après-carrière" || t === "argent" || t === "société"),
+  );
+  const analyses = articles
+    .filter((a) => a.category === "analyses" && !a.tags?.includes("enjeux"))
+    .slice(0, 3);
   const guides = articles.filter((a) => a.category === "guides").slice(0, 3);
   const portraits = articles.filter((a) => a.category === "clubs" || a.category === "combattants").slice(0, 3);
-  const fights = getFights();
   const fighters = getBoxers().slice(0, 4);
-  const results = fights.results.slice(0, 4);
+
+  const dossierArgent = (enjeuxVie.length ? enjeuxVie : enjeux).slice(0, 2);
+  const dossierCorps = (enjeuxCorps.length ? enjeuxCorps : enjeux).slice(0, 2);
 
   return (
     <>
@@ -38,69 +49,41 @@ export default function HomePage() {
         <ArticleList articles={featured} layout="magazine" />
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <SectionHeader
-          eyebrow="Calendrier"
-          title="Combats à venir"
-          description="Affiches pieds-poings suivies par la rédaction, avec statut clair."
-          href="/combats-a-venir"
-        />
-        <div className="grid gap-6 lg:grid-cols-2">
-          {fights.upcoming.map((fight) => (
-            <FightCard
-              key={fight.id}
-              fighter1={fight.fighter1}
-              fighter2={fight.fighter2}
-              fighter1Slug={fight.fighter1Slug}
-              fighter2Slug={fight.fighter2Slug}
-              date={formatDate(fight.date)}
-              venue={fight.venue}
-              event={fight.event}
-              status={fight.status}
-              href="/combats-a-venir"
-            />
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-border bg-surface/40 py-14">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      {dossierArgent.length > 0 ? (
+        <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <SectionHeader
-            eyebrow="Scoreboard"
-            title="Derniers résultats"
-            href="/resultats"
-            linkLabel="Tous les résultats"
+            eyebrow="Enjeux"
+            title="Derrière le KO"
+            description="Cachets, contrats opaques, vies en équilibre : ce que le spectacle ne montre pas."
+            href="/analyses"
+            linkLabel="Toutes les analyses"
           />
-          <div className="overflow-hidden rounded-[1.25rem] border border-border">
-            {results.map((r) => (
-              <div
-                key={r.id}
-                className="grid gap-2 border-b border-border px-4 py-4 last:border-b-0 sm:grid-cols-[7rem_1fr_auto] sm:items-center sm:px-6"
-              >
-                <time className="text-xs uppercase tracking-[0.14em] text-muted" dateTime={r.date}>
-                  {formatDate(r.date)}
-                </time>
-                <div>
-                  <p className="font-medium text-cream">
-                    {r.fighter1} <span className="text-muted">vs</span> {r.fighter2}
-                  </p>
-                  <p className="text-sm text-muted">
-                    {r.event}
-                    {r.title ? ` · ${r.title}` : ""}
-                  </p>
-                </div>
-                <div className="text-left sm:text-right">
-                  <span className="badge badge-accent">{r.result}</span>
-                  <p className="mt-1 text-xs text-muted">
-                    {r.method}
-                    {r.rounds ? ` · ${r.rounds}` : ""}
-                  </p>
-                </div>
-              </div>
+          <div className="grid gap-6 lg:grid-cols-2">
+            {dossierArgent.map((article, i) => (
+              <ArticleCard key={article.slug} article={article} variant="horizontal" index={i} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
+
+      {dossierCorps.length > 0 ? (
+        <section className="border-y border-border bg-surface/40 py-14">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <SectionHeader
+              eyebrow="Santé & silence"
+              title="Le prix du corps"
+              description="Coupure de poids, blessures cachées, après-carrière : les dettes que le ring laisse."
+              href="/analyses"
+              linkLabel="Lire le dossier"
+            />
+            <div className="grid gap-6 lg:grid-cols-2">
+              {dossierCorps.map((article, i) => (
+                <ArticleCard key={article.slug} article={article} variant="horizontal" index={i} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <SectionHeader
@@ -111,18 +94,62 @@ export default function HomePage() {
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { href: "/muay-thai", label: "Muay Thaï", text: "Huit membres, clinch, tradition." },
-            { href: "/kick-boxing", label: "Kick Boxing", text: "Poings + pieds, rythme club." },
-            { href: "/k1", label: "K1", text: "Kick-boxing moderne de galas." },
-            { href: "/pieds-poings", label: "Pieds-Poings", text: "Famille de disciplines." },
+            {
+              href: "/muay-thai",
+              label: "Muay Thaï",
+              text: "Huit membres, clinch, tradition.",
+              image: editorial.waiKru,
+            },
+            {
+              href: "/kick-boxing",
+              label: "Kick Boxing",
+              text: "Poings + pieds, rythme club.",
+              image: editorial.kick,
+            },
+            {
+              href: "/k1",
+              label: "K1",
+              text: "Kick-boxing moderne de galas.",
+              image: editorial.redBlue,
+            },
+            {
+              href: "/pieds-poings",
+              label: "Pieds-Poings",
+              text: "Famille de disciplines.",
+              image: editorial.catchKick,
+            },
           ].map((item) => (
-            <Link key={item.href} href={item.href} className="card-surface block p-5 no-underline transition-transform hover:-translate-y-1">
-              <p className="font-display text-2xl text-cream">{item.label}</p>
-              <p className="mt-2 text-sm text-muted">{item.text}</p>
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group relative isolate min-h-[14rem] overflow-hidden rounded-[1.25rem] no-underline"
+            >
+              <Image
+                src={item.image}
+                alt=""
+                fill
+                sizes="25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
+              <div className="relative z-10 flex h-full flex-col justify-end p-5">
+                <p className="font-display text-2xl text-white">{item.label}</p>
+                <p className="mt-1 text-sm text-cream/80">{item.text}</p>
+              </div>
             </Link>
           ))}
         </div>
       </section>
+
+      <FeatureBand
+        eyebrow="Tradition"
+        title="Du camp au stade"
+        description="Photos de ring, de salle et de rituels — la Boxe Thaï vue de près, sans images génériques."
+        href="/muay-thai"
+        cta="Découvrir le Muay Thaï"
+        image={editorial.rajadamnern}
+        imageAlt="Soirée de Muay Thaï au stade Rajadamnern"
+      />
 
       {analyses.length > 0 ? (
         <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
@@ -185,23 +212,35 @@ export default function HomePage() {
         </section>
       ) : null}
 
-      <section className="border-y border-border bg-surface/50 py-14">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6">
+      <section className="relative overflow-hidden border-y border-border">
+        <div className="absolute inset-0">
+          <Image
+            src={editorial.lumpinee}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/55" />
+        </div>
+        <div className="relative mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-16 sm:flex-row sm:items-center sm:px-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Communauté</p>
-            <h2 className="mt-2 font-display text-4xl text-cream">Forum</h2>
+            <h2 className="mt-2 font-display text-4xl text-cream">Ne ratez rien</h2>
             <p className="mt-2 max-w-xl text-muted">
-              Échangez sur les galas, clubs, entraînements et disciplines — avec une modération claire.
+              Inscrivez-vous pour être prévenu(e) dès qu’un nouvel article est publié.
             </p>
           </div>
-          <Link href="/forum" className="btn-primary">
-            Entrer sur le forum
+          <Link href="#newsletter" className="btn-primary">
+            S&apos;inscrire à la newsletter
           </Link>
         </div>
       </section>
 
       <RubriquesShowcase />
-      <NewsletterBlock />
+      <div id="newsletter">
+        <NewsletterBlock />
+      </div>
     </>
   );
 }

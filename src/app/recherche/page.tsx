@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Recherche",
-  description: "Rechercher dans boxe-thai.com : articles, combattants, clubs.",
+  description: "Rechercher sur Actu Thaii : articles, combattants, clubs.",
   alternates: { canonical: `${siteConfig.url}/recherche` },
 };
 

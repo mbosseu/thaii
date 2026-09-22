@@ -132,7 +132,7 @@ export function ArticleCard({
           {article.description}
         </p>
         <div className="mt-5 flex items-center justify-between text-xs uppercase tracking-[0.14em] text-muted">
-          <span>{article.author ?? "Boxe Thaï"} · {article.readingTime}</span>
+          <span>{article.author ?? "Actu Thaii"} · {article.readingTime}</span>
           <span className="text-cream">Lire →</span>
         </div>
       </div>

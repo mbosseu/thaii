@@ -29,7 +29,7 @@ export function CategoryPage({ slug }: { slug: CategorySlug }) {
   const articles = getArticlesByCategory(slug);
   if (!category) return null;
 
-  const image = categoryImages[slug] ?? "/images/covers/combat.webp";
+  const image = categoryImages[slug] ?? "/images/editorial/punch-impact-arena.jpg";
   const layout = articles.length >= 3 ? "magazine" : articles.length === 1 ? "stack" : "grid";
 
   return (

@@ -17,8 +17,8 @@ export default function KickBoxingPage() {
         eyebrow="Discipline"
         title="Kick Boxing"
         description="Poings et pieds : une base pieds-poings accessible, du loisir à la compétition."
-        image="/images/covers/boxe-thai-header.webp"
-        imageAlt="Entraînement kick-boxing / pieds-poings"
+        image="/images/editorial/kick-action-rws.jpg"
+        imageAlt="Coup de pied en combat pieds-poings"
       />
       <article className="mx-auto max-w-3xl px-4 py-12 font-serif text-muted sm:px-6">
         <p className="text-lg leading-relaxed">

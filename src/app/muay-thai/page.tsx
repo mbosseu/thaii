@@ -17,8 +17,8 @@ export default function MuayThaiPage() {
         eyebrow="Discipline"
         title="Muay Thaï"
         description="L’art des huit membres : poings, pieds, genoux, coudes et clinch."
-        image="/images/covers/danse-wai-kru.webp"
-        imageAlt="Wai Kru Muay Thaï"
+        image="/images/editorial/wai-kru-dual.jpg"
+        imageAlt="Wai Kru Ram Muay avant un combat"
       />
       <article className="mx-auto max-w-3xl px-4 py-12 font-serif text-muted sm:px-6">
         <p className="text-lg leading-relaxed">

@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Combattants",
-  description: "Fiches et portraits de combattants Muay Thaï, Kick Boxing et K1 suivis par boxe-thai.com.",
+  description: "Fiches et portraits de combattants Muay Thaï, Kick Boxing et K1 suivis par Actu Thaii.",
   alternates: { canonical: `${siteConfig.url}/combattants` },
 };
 
@@ -20,8 +20,8 @@ export default function CombattantsPage() {
         eyebrow="Portraits"
         title="Combattants"
         description="Fiches factuelles, sources citées. Muay Thaï, Kick Boxing, K1."
-        image="/images/covers/combat.webp"
-        imageAlt="Combat pieds-poings"
+        image="/images/editorial/champion-wbc-belts.jpg"
+        imageAlt="Champion de Muay Thaï avec ceintures WBC"
       />
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-3">
         {fighters.map((fighter) => (

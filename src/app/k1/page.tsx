@@ -16,8 +16,8 @@ export default function K1Page() {
         eyebrow="Discipline"
         title="K1"
         description="Le kick-boxing de galas : volume striking, genoux, clinch limité."
-        image="/images/covers/combat.webp"
-        imageAlt="Ambiance combat K1 / pieds-poings"
+        image="/images/editorial/rajadamnern-red-blue.jpg"
+        imageAlt="Échange rouge contre bleu en gala pieds-poings"
       />
       <article className="mx-auto max-w-3xl px-4 py-12 font-serif text-muted sm:px-6">
         <p className="text-lg leading-relaxed">

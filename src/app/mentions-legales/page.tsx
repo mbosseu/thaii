@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: "Mentions légales de boxe-thai.com.",
+  description: "Mentions légales d’Actu Thaii.",
   alternates: { canonical: `${siteConfig.url}/mentions-legales` },
 };
 
@@ -28,6 +28,12 @@ export default function MentionsPage() {
         </p>
         <p>
           <strong>Contact :</strong> {siteConfig.contactEmail}
+        </p>
+        <p>
+          <strong>Newsletter :</strong> en vous inscrivant, vous acceptez de recevoir des emails
+          d&apos;information lors de la publication de nouveaux articles. Les données collectées
+          (nom, email) sont utilisées uniquement à cette fin. Vous pouvez demander la suppression
+          de vos données à tout moment via {siteConfig.contactEmail}.
         </p>
       </div>
     </div>

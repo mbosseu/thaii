@@ -1,65 +1,57 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { NewsletterBlock } from "@/components/NewsletterBlock";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Forum",
+  title: "Communauté",
   description:
-    "Espace communautaire boxe-thai.com : galas, combattants, clubs, entraînements, disciplines et conseils débutants. Modération active.",
+    "Rejoignez Actu Thaii : inscrivez-vous pour être informé des nouveaux articles Muay Thaï et pieds-poings.",
   alternates: { canonical: `${siteConfig.url}/forum` },
 };
-
-const topics = [
-  { title: "Galas & résultats", text: "Comptes-rendus, affiches, réactions après combat." },
-  { title: "Clubs & entraînements", text: "Choisir une salle, séances types, conseils débutants." },
-  { title: "Disciplines", text: "Muay Thaï, Kick Boxing, K1, pieds-poings." },
-  { title: "Combattants & coachs", text: "Portraits, parcours, questions à la communauté." },
-  { title: "Pronostics éditoriaux", text: "Analyses et débats — pas de conseil de pari." },
-];
 
 export default function ForumPage() {
   return (
     <>
       <PageHero
         eyebrow="Communauté"
-        title="Forum"
-        description="Un espace pour échanger entre passionnés. La modération exclut les contenus abusifs, diffamatoires ou hors sujet."
-        image="/images/covers/boxe-thai-header.webp"
-        imageAlt="Communauté boxe thaï"
+        title="Restez informé"
+        description="Pas encore de forum ouvert : en attendant, laissez votre email pour recevoir les nouveaux articles."
+        image="/images/editorial/lumpinee-stadium.jpg"
+        imageAlt="Public autour d'un ring de Muay Thaï"
       />
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="card-surface mb-8 p-6">
-          <h2 className="font-display text-3xl text-cream">Règles de modération</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-muted">
-            <li>Pas d’insultes, de harcèlement ni de propos discriminatoires.</li>
-            <li>Pas de diffamation envers clubs, coachs ou combattants.</li>
-            <li>Pas de spam commercial ni de liens trompeurs.</li>
-            <li>Rester sur le sujet : boxe thaï et pieds-poings.</li>
-          </ul>
+        <div className="card-surface mb-10 p-6">
+          <h2 className="font-display text-3xl text-cream">Pourquoi une newsletter ?</h2>
+          <p className="mt-4 text-muted">
+            On préfère vous prévenir quand un vrai dossier sort, plutôt que de lancer un forum vide.
+            Nom + email suffisent. Pas de spam : uniquement les nouvelles publications.
+          </p>
           <p className="mt-4 text-sm text-muted">
-            Pour signaler un abus :{" "}
-            <a href={`mailto:${siteConfig.contactEmail}`} className="text-cream">
+            Question ou demande de suppression de données :{" "}
+            <a href={`mailto:${siteConfig.contactEmail}`} className="text-cream underline">
               {siteConfig.contactEmail}
             </a>
           </p>
         </div>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          {topics.map((topic) => (
-            <article key={topic.title} className="card-surface p-5">
-              <h3 className="font-display text-2xl text-cream">{topic.title}</h3>
-              <p className="mt-2 text-sm text-muted">{topic.text}</p>
-              <p className="mt-4 text-xs uppercase tracking-[0.16em] text-gold">Bientôt ouvert</p>
-            </article>
-          ))}
-        </div>
-
-        <p className="mt-10 text-muted">
-          En attendant l’ouverture des fils, lisez les{" "}
-          <Link href="/actualites">actualités</Link>, les{" "}
-          <Link href="/guides">guides débutants</Link> ou contactez la rédaction via{" "}
-          <Link href="/contact">la page contact</Link>.
+      </div>
+      <NewsletterBlock />
+      <div className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
+        <p className="text-muted">
+          En attendant, lisez les{" "}
+          <Link href="/actualites" className="text-cream underline">
+            actualités
+          </Link>
+          , les{" "}
+          <Link href="/guides" className="text-cream underline">
+            guides débutants
+          </Link>{" "}
+          ou{" "}
+          <Link href="/contact" className="text-cream underline">
+            contactez la rédaction
+          </Link>
+          .
         </p>
       </div>
     </>

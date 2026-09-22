@@ -19,7 +19,7 @@ export default function ClubsPage() {
       <PageHero
         eyebrow="Terrains"
         title="Clubs de boxe"
-        description="Portraits de clubs français, avec distinction claire des backlinks demandés éditorialement."
+        description="Fiches de clubs pieds-poings en France : disciplines, encadrement et infos pratiques."
         image={sectionImages.clubs}
       />
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-3">

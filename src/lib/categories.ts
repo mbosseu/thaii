@@ -5,19 +5,9 @@ export const categories = [
     description: "L’actualité de la boxe thaï et des sports pieds-poings.",
   },
   {
-    slug: "resultats",
-    label: "Résultats",
-    description: "Résultats de galas Muay Thaï, Kick Boxing et K1.",
-  },
-  {
     slug: "combats-a-venir",
     label: "Combats à venir",
     description: "Affiches, dates et enjeux des prochains combats pieds-poings.",
-  },
-  {
-    slug: "galas",
-    label: "Galas",
-    description: "Galas français et internationaux à suivre.",
   },
   {
     slug: "combattants",
@@ -66,13 +56,11 @@ export function getCategory(slug: string) {
 
 export const primaryNav = [
   { href: "/actualites", label: "Actualités" },
-  { href: "/resultats", label: "Résultats" },
-  { href: "/galas", label: "Galas" },
   { href: "/combats-a-venir", label: "Combats" },
   { href: "/combattants", label: "Combattants" },
   { href: "/clubs", label: "Clubs" },
   { href: "/disciplines", label: "Disciplines" },
-  { href: "/forum", label: "Forum" },
+  { href: "/forum", label: "Newsletter" },
 ] as const;
 
 export const footerNav = [

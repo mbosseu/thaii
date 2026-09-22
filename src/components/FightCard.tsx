@@ -27,8 +27,8 @@ export function FightCard({
 }: FightCardProps) {
   const a = fighter1Slug ? getBoxer(fighter1Slug) : null;
   const b = fighter2Slug ? getBoxer(fighter2Slug) : null;
-  const imgA = a?.image ?? "/images/covers/boxe-thai-1.webp";
-  const imgB = b?.image ?? "/images/covers/boxe-thai-2.webp";
+  const imgA = a?.image ?? "/images/editorial/fighter-corner-mongkhon.jpg";
+  const imgB = b?.image ?? "/images/editorial/ring-exchange.jpg";
 
   const inner = (
     <div className="card-surface overflow-hidden">

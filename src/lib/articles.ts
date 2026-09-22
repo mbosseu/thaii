@@ -80,7 +80,7 @@ export function getArticleBySlug(slug: string): Article | null {
     date: data.date,
     updated: data.updated,
     category: data.category,
-    author: data.author ?? "Rédaction Boxe Thaï",
+    author: data.author ?? "Rédaction Actu Thaii",
     tags: data.tags ?? [],
     cover: data.cover,
     coverAlt: data.coverAlt,

@@ -5,8 +5,8 @@
     "shortName": "FFKMDA",
     "type": "Fédération nationale",
     "website": "https://www.ffkmda.fr/",
-    "image": "/images/covers/boxe-thai-header.webp",
-    "imageAlt": "Cadre fédéral kick-boxing et Muay Thaï",
+    "image": "/images/editorial/victory-belt-team.jpg",
+    "imageAlt": "Encadrement et ceinture après un combat pieds-poings",
     "summary": "Fédération Française de Kick Boxing, Muay Thaï et Disciplines Associées. Cadre fédéral pour le Muay Thaï, le kick-boxing et disciplines proches en France.",
     "role": "Fédérer les clubs, encadrer les licences et structurer la pratique pieds-poings."
   },
@@ -16,8 +16,8 @@
     "shortName": "ONE",
     "type": "Organisation internationale",
     "website": "https://www.onefc.com/",
-    "image": "/images/covers/combat.webp",
-    "imageAlt": "Organisation internationale de sports de combat",
+    "image": "/images/editorial/punch-impact-arena.jpg",
+    "imageAlt": "Combat pieds-poings sous les projecteurs",
     "summary": "Organisation internationale proposant notamment des combats de Muay Thaï et de Kick Boxing.",
     "role": "Organiser des galas et classements internationaux."
   }

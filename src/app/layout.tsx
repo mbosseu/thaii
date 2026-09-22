@@ -27,7 +27,7 @@ const body = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Média Boxe Thaï & Pieds-Poings`,
+    default: `${siteConfig.name} — Média Muay Thaï & Pieds-Poings`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     images: [{ url: "/logo.png", alt: siteConfig.name }],
   },
-  icons: { icon: "/logo.png", apple: "/logo.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

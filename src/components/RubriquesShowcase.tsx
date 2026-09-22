@@ -4,9 +4,7 @@ import { categories } from "@/lib/categories";
 import { categoryImages } from "@/lib/media";
 
 const featured = categories.filter((c) =>
-  ["actualites", "resultats", "clubs", "analyses", "combattants", "galas", "guides", "disciplines"].includes(
-    c.slug,
-  ),
+  ["actualites", "clubs", "analyses", "combattants", "guides", "disciplines"].includes(c.slug),
 );
 
 export function RubriquesShowcase() {
@@ -14,7 +12,7 @@ export function RubriquesShowcase() {
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <div className="mb-10 max-w-2xl">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Explorer</p>
-        <h2 className="mt-2 font-display text-3xl text-cream sm:text-5xl">Rubriques</h2>
+        <h2 className="section-title-mark mt-2 font-display text-3xl text-cream sm:text-5xl">Rubriques</h2>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {featured.map((category) => (
@@ -24,7 +22,7 @@ export function RubriquesShowcase() {
             className="group relative isolate min-h-[11rem] overflow-hidden rounded-[1.25rem] no-underline"
           >
             <Image
-              src={categoryImages[category.slug] ?? "/images/covers/combat.webp"}
+              src={categoryImages[category.slug] ?? "/images/editorial/punch-impact-arena.jpg"}
               alt=""
               fill
               sizes="33vw"

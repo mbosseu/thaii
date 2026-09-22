@@ -26,7 +26,7 @@ export function Header() {
             <span className="font-display block text-2xl tracking-wide text-cream sm:text-3xl">
               {siteConfig.name}
             </span>
-            <span className="hidden text-[0.65rem] uppercase tracking-[0.18em] text-accent sm:block">
+            <span className="hidden text-[0.65rem] uppercase tracking-[0.22em] text-accent sm:block">
               Muay Thaï · Kick · K1
             </span>
           </span>
@@ -37,7 +37,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-2.5 py-2 text-[0.8rem] font-medium text-muted no-underline transition-colors hover:bg-white/5 hover:text-cream"
+              className="rounded-full px-2.5 py-2 text-[0.8rem] font-semibold text-[#e7e7e7] no-underline transition-colors hover:text-accent"
             >
               {item.label}
             </Link>

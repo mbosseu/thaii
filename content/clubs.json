@@ -5,18 +5,57 @@
     "shortName": "Boxing Center",
     "city": "Toulouse",
     "region": "Occitanie",
-    "address": "Plusieurs salles : Saint-Cyprien, États-Unis, Minimes, Ramonville, Portet-sur-Garonne",
-    "website": "https://boxingcenter.fr/",
-    "image": "/images/clubs/saint-cyprien-hero.webp",
+    "address": "Plusieurs salles en métropole toulousaine (Saint-Cyprien, États-Unis, Balma-Gramont, Barrière de Paris, Ramonville, Portet-sur-Garonne)",
+    "email": "boxingcenter31@gmail.com",
+    "hours": "Lundi au samedi : 10h00 – 21h30",
+    "website": "https://boxingcenter.fr/boxe-thai-muay-thai-et-kick-boxing-toulouse/",
+    "image": "/images/clubs/etats-unis-hero.png",
     "imageCredit": "Boxing Center",
-    "imageAlt": "Salle Boxing Center Saint-Cyprien Toulouse",
-    "summary": "Réseau de salles de sports de combat à Toulouse proposant Boxe Thaï / Muay Thaï, Kick Boxing, K1 et boxe pieds-poings, avec un encadrement diplômé affilié FFKMDA.",
-    "disciplines": ["Boxe Thaï / Muay Thaï", "Kick Boxing", "K1", "Boxe Pieds-Poings", "Boxe anglaise", "MMA"],
+    "imageAlt": "Entraînement Boxe Thaï / Kick Boxing au Boxing Center Toulouse",
+    "summary": "Cours de Boxe Thaï / Muay Thaï et Kick Boxing à Toulouse, accessibles à tous les niveaux — débutants, confirmés et compétiteurs — dans une ambiance de partage, avec des coachs diplômés et une affiliation FFKMDA.",
+    "disciplines": [
+      "Boxe Thaï / Muay Thaï",
+      "Kick Boxing",
+      "K1",
+      "Boxe Pieds-Poings",
+      "Boxe française",
+      "MMA"
+    ],
     "coaches": ["Jérôme", "Renaud"],
+    "locations": [
+      {
+        "name": "États-Unis",
+        "address": "388 avenue des États-Unis, 31200 Toulouse",
+        "note": "Grande salle sports de combat — sortie périphérique 33b Lalande"
+      },
+      {
+        "name": "Saint-Cyprien",
+        "address": "11 rue Sainte-Lucie, 31300 Toulouse"
+      },
+      {
+        "name": "Balma-Gramont",
+        "address": "8 rue Théron de Montaugé, 31200 Toulouse",
+        "note": "Créneaux dédiés compétiteurs Boxe Thaï & Kick Boxing"
+      },
+      {
+        "name": "Barrière de Paris",
+        "address": "12 rue de Fenouillet, 31200 Toulouse"
+      },
+      {
+        "name": "Ramonville Saint-Agne",
+        "address": "33 rue des Ormes, 31520 Ramonville-Saint-Agne"
+      },
+      {
+        "name": "Portet-sur-Garonne",
+        "address": "61 route d’Espagne, 31120 Portet-sur-Garonne"
+      }
+    ],
     "highlights": [
-      "Affilié FFKMDA pour le Muay Thaï / kick-boxing",
-      "Plusieurs salles en métropole toulousaine",
-      "Cours débutants et compétiteurs"
+      "Affiliation FFKMDA pour la Boxe Thaï / Kick Boxing",
+      "Coachs diplômés et passionnés (Jérôme, Renaud…)",
+      "Tous niveaux : débutants, confirmés, compétiteurs",
+      "Atmosphère de partage et de cohésion en salle",
+      "Plusieurs sites en métropole toulousaine"
     ],
     "allowExternalBacklink": true
   }

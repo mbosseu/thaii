@@ -17,12 +17,12 @@ export default function PiedsPoingsPage() {
         eyebrow="Discipline"
         title="Pieds-Poings"
         description="Le terme parapluie des sports de percussion debout : thaï, kick, K1…"
-        image="/images/covers/boxe-thai-2.webp"
-        imageAlt="Entraînement pieds-poings"
+        image="/images/editorial/catch-kick-action.jpg"
+        imageAlt="Action pieds-poings dans le ring"
       />
       <article className="mx-auto max-w-3xl px-4 py-12 font-serif text-muted sm:px-6">
         <p className="text-lg leading-relaxed">
-          « Pieds-poings » désigne une famille de disciplines. Sur boxe-thai.com, on y regroupe la Boxe Thaï,
+          « Pieds-poings » désigne une famille de disciplines. Sur Actu Thaii, on y regroupe la Boxe Thaï,
           le Kick Boxing, le K1 et les pratiques de club associées.
         </p>
         <p className="mt-4 leading-relaxed">

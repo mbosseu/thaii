@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contacter la rédaction de boxe-thai.com.",
+  description: "Contacter la rédaction d’Actu Thaii.",
   alternates: { canonical: `${siteConfig.url}/contact` },
 };
 

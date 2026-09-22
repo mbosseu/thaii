@@ -19,7 +19,7 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">Navigation</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">Navigation</p>
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
             {footerNav.map((item) => (
               <li key={item.href}>
@@ -31,7 +31,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">Suivre</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">Suivre</p>
           <ul className="space-y-2 text-sm text-muted">
             <li>Réseaux — à venir</li>
             <li>
