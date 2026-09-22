@@ -23,6 +23,7 @@ export type ArticleFrontmatter = {
   cover?: string;
   coverAlt?: string;
   imageCredit?: string;
+  imageSource?: string;
   gallery?: GalleryImage[];
   related?: string[];
   draft?: boolean;
@@ -84,6 +85,7 @@ export function getArticleBySlug(slug: string): Article | null {
     cover: data.cover,
     coverAlt: data.coverAlt,
     imageCredit: data.imageCredit,
+    imageSource: data.imageSource,
     gallery: data.gallery ?? [],
     related: data.related ?? [],
     readingTime: estimateReadingTime(content),

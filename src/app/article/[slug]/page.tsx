@@ -94,7 +94,11 @@ export default async function ArticlePage({ params }: Props) {
           <Image src={cover.src} alt={cover.alt} fill priority sizes="100vw" className="object-cover" />
         </div>
         {article.imageCredit ? (
-          <figcaption className="mt-2 text-xs text-muted">Crédit : {article.imageCredit}</figcaption>
+          <figcaption className="mt-2 text-xs text-muted">
+            Crédit : {article.imageSource ? (
+              <a href={article.imageSource} target="_blank" rel="noopener noreferrer">{article.imageCredit}</a>
+            ) : article.imageCredit}
+          </figcaption>
         ) : null}
       </figure>
 
