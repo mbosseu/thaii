@@ -51,9 +51,9 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 pb-8 pt-8 sm:px-6 sm:pt-10">
         <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="" width={64} height={64} className="rounded-full" priority />
+            <Image src="/logo.png" alt="Logo Actu Thaii" width={64} height={64} className="rounded-full" priority />
             <div>
-              <p className="font-display text-4xl text-cream sm:text-5xl">{siteConfig.name}</p>
+              <h1 className="font-display text-4xl text-cream sm:text-5xl">{siteConfig.name}</h1>
               <p className="mt-1 text-sm text-muted">{siteConfig.tagline}</p>
             </div>
           </div>

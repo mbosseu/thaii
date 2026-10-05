@@ -17,6 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: coach.name,
     description: coach.bio,
+    openGraph: {
+      title: coach.name,
+      description: coach.bio,
+      url: `${siteConfig.url}/coachs/${coach.slug}`,
+      images: [{ url: coach.image, alt: coach.imageAlt }],
+      type: "website",
+      locale: siteConfig.locale,
+    },
     alternates: { canonical: `${siteConfig.url}/coachs/${coach.slug}` },
   };
 }

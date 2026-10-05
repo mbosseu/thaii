@@ -25,6 +25,7 @@ export function buildCategoryMetadata(slug: CategorySlug): Metadata {
     openGraph: {
       title: `${title} | ${siteConfig.name}`,
       description,
+      url: `${siteConfig.url}/${slug}`,
       locale: siteConfig.locale,
       type: "website",
     },

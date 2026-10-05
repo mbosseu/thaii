@@ -14,7 +14,7 @@ import {
 } from "@/lib/articles";
 import { getCategory } from "@/lib/categories";
 import { resolveArticleCover } from "@/lib/media";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, pageUrl } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: article.title,
       description: article.description,
       type: "article",
+      url: pageUrl(`/article/${article.slug}`),
       publishedTime: article.date,
       modifiedTime: article.updated ?? article.date,
       images: [{ url: cover.src, alt: cover.alt }],

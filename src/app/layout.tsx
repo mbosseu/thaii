@@ -56,19 +56,11 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: siteConfig.locale,
     type: "website",
-    url: siteConfig.url,
-    title: `${siteConfig.name} — Boxe thaï, Muay Thaï, Kick Boxing & K1`,
-    description: siteConfig.description,
     images: [{ url: "/logo.png", alt: `${siteConfig.name} — média boxe thaï` }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Boxe thaï & Muay Thaï`,
-    description: siteConfig.description,
     images: ["/logo.png"],
-  },
-  alternates: {
-    canonical: siteConfig.url,
   },
 };
 

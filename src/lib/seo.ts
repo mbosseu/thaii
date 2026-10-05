@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig } from "@/lib/site";
+import { pageUrl, siteConfig } from "@/lib/site";
 
 /** Mots-clés prioritaires FR (intent recherche + variantes orthographiques). */
 export const primaryKeywords = [
@@ -66,7 +66,7 @@ export function buildPageMetadata({
   imageAlt = siteConfig.name,
   type = "website",
 }: PageMetaInput): Metadata {
-  const url = `${siteConfig.url}${path === "/" ? "" : path}`;
+  const url = pageUrl(path);
 
   return {
     title,

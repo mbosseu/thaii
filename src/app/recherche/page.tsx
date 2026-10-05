@@ -10,6 +10,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Recherche",
   description: "Rechercher sur Actu Thaii : articles, combattants, clubs.",
+  robots: { index: false, follow: true },
   alternates: { canonical: `${siteConfig.url}/recherche` },
 };
 

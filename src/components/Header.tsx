@@ -16,7 +16,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-3 no-underline" aria-label={`${siteConfig.name} — accueil`}>
           <Image
             src="/logo.png"
-            alt=""
+            alt="Actu Thaii"
             width={48}
             height={48}
             className="rounded-full"

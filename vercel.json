@@ -2,5 +2,19 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "npx pnpm@10.34.5 install --frozen-lockfile",
-  "buildCommand": "npx pnpm@10.34.5 run build"
+  "buildCommand": "npx pnpm@10.34.5 run build",
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "thaii.vercel.app" }],
+      "destination": "https://www.boxe-thai.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "thaii.vercel.app" }],
+      "destination": "https://www.boxe-thai.com/:path*",
+      "permanent": true
+    }
+  ]
 }

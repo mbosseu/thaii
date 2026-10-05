@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description: club.summary,
+      url: `${siteConfig.url}/clubs/${club.slug}`,
       images: [{ url: club.image, alt: club.imageAlt }],
       type: "website",
       locale: siteConfig.locale,

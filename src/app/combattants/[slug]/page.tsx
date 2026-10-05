@@ -18,6 +18,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: fighter.name,
     description: fighter.bio,
+    openGraph: {
+      title: fighter.name,
+      description: fighter.bio,
+      url: `${siteConfig.url}/combattants/${fighter.slug}`,
+      images: [{ url: fighter.image, alt: fighter.imageAlt }],
+      type: "website",
+      locale: siteConfig.locale,
+    },
     alternates: { canonical: `${siteConfig.url}/combattants/${fighter.slug}` },
   };
 }
