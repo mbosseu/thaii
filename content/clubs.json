@@ -5,7 +5,7 @@
     "shortName": "Boxing Center",
     "city": "Toulouse",
     "region": "Occitanie",
-    "address": "Plusieurs salles en métropole toulousaine (Saint-Cyprien, États-Unis, Balma-Gramont, Barrière de Paris, Ramonville, Portet-sur-Garonne)",
+    "address": "Plusieurs salles en métropole toulousaine (Saint-Cyprien, États-Unis, Barrière de Paris, Ramonville, Portet-sur-Garonne)",
     "email": "boxingcenter31@gmail.com",
     "hours": "Lundi au samedi : 10h00 – 21h30",
     "website": "https://boxingcenter.fr/boxe-thai-muay-thai-et-kick-boxing-toulouse/",
@@ -31,11 +31,6 @@
       {
         "name": "Saint-Cyprien",
         "address": "11 rue Sainte-Lucie, 31300 Toulouse"
-      },
-      {
-        "name": "Balma-Gramont",
-        "address": "8 rue Théron de Montaugé, 31200 Toulouse",
-        "note": "Créneaux dédiés compétiteurs Boxe Thaï & Kick Boxing"
       },
       {
         "name": "Barrière de Paris",
