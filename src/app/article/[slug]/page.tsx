@@ -27,10 +27,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticleBySlug(slug);
   if (!article) return { title: "Article introuvable" };
   const cover = resolveArticleCover(article);
+  const category = getCategory(article.category);
+  const keywords = Array.from(
+    new Set([
+      ...(article.tags ?? []),
+      category?.label ?? "",
+      "boxe thaï",
+      "muay thaï",
+      "kick boxing",
+      "actu thaii",
+    ].filter(Boolean)),
+  );
 
   return {
     title: article.title,
     description: article.description,
+    keywords,
+    authors: [{ name: article.author ?? siteConfig.name }],
     openGraph: {
       title: article.title,
       description: article.description,
@@ -38,6 +51,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: article.date,
       modifiedTime: article.updated ?? article.date,
       images: [{ url: cover.src, alt: cover.alt }],
+      locale: siteConfig.locale,
+      siteName: siteConfig.name,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
+      images: [cover.src],
     },
     alternates: { canonical: `${siteConfig.url}/article/${article.slug}` },
   };
@@ -64,8 +85,19 @@ export default async function ArticlePage({ params }: Props) {
             datePublished: article.date,
             dateModified: article.updated ?? article.date,
             image: `${siteConfig.url}${cover.src}`,
+            keywords: (article.tags ?? []).join(", "),
+            inLanguage: "fr-FR",
+            mainEntityOfPage: `${siteConfig.url}/article/${article.slug}`,
             author: { "@type": "Organization", name: article.author ?? siteConfig.name },
-            publisher: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+            publisher: {
+              "@type": "Organization",
+              name: siteConfig.name,
+              url: siteConfig.url,
+              logo: {
+                "@type": "ImageObject",
+                url: `${siteConfig.url}/logo.png`,
+              },
+            },
           },
         ]}
       />

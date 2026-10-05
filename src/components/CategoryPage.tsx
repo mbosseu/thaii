@@ -14,11 +14,24 @@ export function buildCategoryMetadata(slug: CategorySlug): Metadata {
   return {
     title,
     description,
+    keywords: [
+      "boxe thaï",
+      "muay thaï",
+      "kick boxing",
+      "k1",
+      "pieds-poings",
+      title,
+    ],
     openGraph: {
       title: `${title} | ${siteConfig.name}`,
       description,
       locale: siteConfig.locale,
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | ${siteConfig.name}`,
+      description,
     },
     alternates: { canonical: `${siteConfig.url}/${slug}` },
   };

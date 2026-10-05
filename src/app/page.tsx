@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
 import { ArticleList } from "@/components/ArticleList";
 import { FeatureBand } from "@/components/FeatureBand";
@@ -7,9 +8,23 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { getAllArticles } from "@/lib/articles";
 import { getBoxers } from "@/lib/content";
 import { editorial } from "@/lib/media";
+import { allSiteKeywords, buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  ...buildPageMetadata({
+    title: "Boxe thaï, Muay Thaï, Kick Boxing & K1",
+    description: siteConfig.description,
+    path: "/",
+    keywords: [...allSiteKeywords],
+    image: "/logo.png",
+  }),
+  title: {
+    absolute: `${siteConfig.name} — Boxe thaï, Muay Thaï, Kick Boxing & K1`,
+  },
+};
 
 export default function HomePage() {
   const articles = getAllArticles();

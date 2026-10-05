@@ -6,8 +6,18 @@ import { getBoxers } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Combattants",
-  description: "Fiches et portraits de combattants Muay Thaï, Kick Boxing et K1 suivis par Actu Thaii.",
+  title: "Combattants Muay Thaï, Kick Boxing et K1",
+  description:
+    "Portraits et fiches de combattants de boxe thaï, Muay Thaï, Kick Boxing et K1 : parcours, style et titres.",
+  keywords: [
+    "combattants muay thaï",
+    "boxeurs thaï",
+    "combattants kick boxing",
+    "combattants k1",
+    "Youssef Boughanem",
+    "Buakaw",
+    "Saenchai",
+  ],
   alternates: { canonical: `${siteConfig.url}/combattants` },
 };
 

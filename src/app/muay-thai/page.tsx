@@ -4,9 +4,18 @@ import { PageHero } from "@/components/PageHero";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Muay Thaï",
+  title: "Muay Thaï (boxe thaï) : règles, clinch et pratique",
   description:
-    "Tout comprendre sur le Muay Thaï / boxe thaï : huit membres, clinch, tradition et pratique en club.",
+    "Qu’est-ce que le Muay Thaï ? Art des huit membres, clinch, tradition thaïlandaise et cours de boxe thaï en club en France.",
+  keywords: [
+    "muay thaï",
+    "muay thai",
+    "boxe thaï",
+    "boxe thai",
+    "clinch muay thaï",
+    "cours muay thaï",
+    "art des huit membres",
+  ],
   alternates: { canonical: `${siteConfig.url}/muay-thai` },
 };
 

@@ -7,8 +7,22 @@ import { sectionImages } from "@/lib/media";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Clubs de boxe",
-  description: "Clubs de pieds-poings en France — fiches factuelles.",
+  title: "Clubs de boxe thaï et Muay Thaï en France",
+  description:
+    "Trouvez un club de boxe thaï, Muay Thaï, Kick Boxing ou K1 : salles, disciplines, coachs et infos pratiques — dont Toulouse.",
+  keywords: [
+    "club boxe thaï",
+    "club muay thaï",
+    "club kick boxing",
+    "salle boxe thaï",
+    "club boxe thaï Toulouse",
+    "muay thaï France",
+  ],
+  openGraph: {
+    title: "Clubs de boxe thaï et Muay Thaï | Actu Thaii",
+    description:
+      "Fiches de clubs Boxe Thaï, Muay Thaï, Kick Boxing et K1 en France.",
+  },
   alternates: { canonical: `${siteConfig.url}/clubs` },
 };
 
@@ -18,8 +32,8 @@ export default function ClubsPage() {
     <>
       <PageHero
         eyebrow="Terrains"
-        title="Clubs de boxe"
-        description="Fiches de clubs pieds-poings en France : disciplines, encadrement et infos pratiques."
+        title="Clubs de boxe thaï"
+        description="Clubs de Boxe Thaï, Muay Thaï, Kick Boxing et K1 en France : disciplines, encadrement et infos pratiques."
         image={sectionImages.clubs}
       />
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-3">

@@ -6,9 +6,17 @@ import { editorial } from "@/lib/media";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Disciplines",
+  title: "Disciplines : Muay Thaï, Kick Boxing, K1, pieds-poings",
   description:
-    "Muay Thaï, Kick Boxing, K1 et Boxe Pieds-Poings : comprendre les disciplines couvertes par Actu Thaii.",
+    "Comparer Muay Thaï (boxe thaï), Kick Boxing, K1 et boxe pieds-poings : règles, clinch, pratique en club.",
+  keywords: [
+    "muay thaï",
+    "boxe thaï",
+    "kick boxing",
+    "k1",
+    "pieds-poings",
+    "différences boxe thaï kick boxing",
+  ],
   alternates: { canonical: `${siteConfig.url}/disciplines` },
 };
 

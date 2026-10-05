@@ -1,48 +1,57 @@
 export const categories = [
   {
     slug: "actualites",
-    label: "Actualités",
-    description: "L’actualité de la boxe thaï et des sports pieds-poings.",
+    label: "Actualités boxe thaï",
+    description:
+      "Actualité Muay Thaï, boxe thaï, Kick Boxing et K1 : combats, clubs, combattants et sports pieds-poings.",
   },
   {
     slug: "combats-a-venir",
     label: "Combats à venir",
-    description: "Affiches, dates et enjeux des prochains combats pieds-poings.",
+    description:
+      "Affiches, dates et enjeux des prochains combats de boxe thaï, Kick Boxing et K1.",
   },
   {
     slug: "combattants",
     label: "Combattants",
-    description: "Portraits et parcours de combattants pieds-poings.",
+    description:
+      "Portraits de combattants Muay Thaï, Kick Boxing et K1 : parcours, style et palmarès.",
   },
   {
     slug: "coachs",
     label: "Coachs",
-    description: "Les entraîneurs qui font la boxe thaï et le kick-boxing.",
+    description:
+      "Coachs et entraîneurs de boxe thaï, Muay Thaï et kick-boxing : pédagogie et expérience ring.",
   },
   {
     slug: "clubs",
-    label: "Clubs",
-    description: "Clubs spécialisés Boxe Thaï, Kick Boxing et K1 en France.",
+    label: "Clubs de boxe thaï",
+    description:
+      "Clubs de Boxe Thaï, Muay Thaï, Kick Boxing et K1 en France — fiches, salles et disciplines.",
   },
   {
     slug: "disciplines",
     label: "Disciplines",
-    description: "Muay Thaï, Kick Boxing, K1 et Boxe Pieds-Poings expliqués.",
+    description:
+      "Muay Thaï, Kick Boxing, K1 et boxe pieds-poings : règles, différences et pratique en club.",
   },
   {
     slug: "guides",
     label: "Guides débutants",
-    description: "Débuter, équipement, choisir un club, préparer sa condition.",
+    description:
+      "Débuter la boxe thaï : premier cours, équipement, choisir un club Muay Thaï, condition physique.",
   },
   {
     slug: "analyses",
     label: "Analyses",
-    description: "Analyses de combats, règles et enjeux sportifs.",
+    description:
+      "Analyses de combats Muay Thaï et Kick Boxing, règles, clinch, enjeux sportifs et société.",
   },
   {
     slug: "interviews",
     label: "Interviews",
-    description: "Paroles de coachs, pratiquants et acteurs du ring.",
+    description:
+      "Interviews de coachs, pratiquants et acteurs de la boxe thaï et des sports pieds-poings.",
   },
 ] as const;
 

@@ -4,9 +4,17 @@ import { PageHero } from "@/components/PageHero";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Boxe Pieds-Poings",
+  title: "Boxe pieds-poings : Muay Thaï, Kick Boxing et K1",
   description:
-    "La boxe pieds-poings : famille de disciplines regroupant Boxe Thaï, Kick Boxing, K1 et apparentées.",
+    "La boxe pieds-poings regroupée : Boxe Thaï / Muay Thaï, Kick Boxing, K1 et disciplines apparentées — guide Actu Thaii.",
+  keywords: [
+    "pieds-poings",
+    "boxe pieds-poings",
+    "sports pieds-poings",
+    "boxe thaï",
+    "kick boxing",
+    "k1",
+  ],
   alternates: { canonical: `${siteConfig.url}/pieds-poings` },
 };
 

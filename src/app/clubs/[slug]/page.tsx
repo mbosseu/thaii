@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/JsonLd";
 import { getClub, getClubs, getCoaches } from "@/lib/content";
+import { localKeywords } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -15,9 +17,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const club = getClub(slug);
   if (!club) return { title: "Club introuvable" };
+  const title = `${club.name} — Club boxe thaï & Muay Thaï à ${club.city}`;
   return {
-    title: club.name,
+    title,
     description: club.summary,
+    keywords: [
+      ...localKeywords,
+      `club boxe thaï ${club.city}`,
+      `muay thaï ${club.city}`,
+      `kick boxing ${club.city}`,
+      club.name,
+      ...club.disciplines,
+    ],
+    openGraph: {
+      title,
+      description: club.summary,
+      images: [{ url: club.image, alt: club.imageAlt }],
+      type: "website",
+      locale: siteConfig.locale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: club.summary,
+      images: [club.image],
+    },
     alternates: { canonical: `${siteConfig.url}/clubs/${club.slug}` },
   };
 }
@@ -31,9 +55,31 @@ export default async function ClubPage({ params }: Props) {
   const locations = "locations" in club ? club.locations : undefined;
   const email = "email" in club ? club.email : undefined;
   const hours = "hours" in club ? club.hours : undefined;
+  const website = "website" in club ? club.website : undefined;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "SportsActivityLocation",
+          name: club.name,
+          description: club.summary,
+          url: `${siteConfig.url}/clubs/${club.slug}`,
+          image: `${siteConfig.url}${club.image}`,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: club.city,
+            addressRegion: club.region,
+            addressCountry: "FR",
+            streetAddress: club.address,
+          },
+          email: email ?? undefined,
+          openingHours: hours ?? undefined,
+          sport: club.disciplines,
+          sameAs: website ? [website] : undefined,
+        }}
+      />
       <div className="relative mb-8 aspect-[21/9] overflow-hidden rounded-[1.25rem]">
         <Image src={club.image} alt={club.imageAlt} fill priority className="object-cover" sizes="100vw" />
       </div>

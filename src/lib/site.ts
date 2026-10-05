@@ -3,8 +3,8 @@ export const siteConfig = {
   domain: "boxe-thai.com",
   url: "https://boxe-thai.com",
   description:
-    "Média et communauté sur la boxe thaï, le Muay Thaï, le Kick Boxing, le K1 et les disciplines pieds-poings : actualités, analyses, clubs, coachs et guides.",
+    "Actu Thaii, le média boxe thaï et Muay Thaï : actualités, guides pour débuter, clubs, combattants, Kick Boxing, K1 et sports pieds-poings.",
   locale: "fr_FR",
-  tagline: "Le média pieds-poings : Muay Thaï, Kick Boxing & K1.",
+  tagline: "Boxe thaï, Muay Thaï, Kick Boxing & K1 — actualités et guides.",
   contactEmail: "contact@boxe-thai.com",
 } as const;

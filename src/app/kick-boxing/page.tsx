@@ -4,9 +4,17 @@ import { PageHero } from "@/components/PageHero";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Kick Boxing",
+  title: "Kick Boxing : règles, vs Muay Thaï et K1",
   description:
-    "Kick Boxing : règles, différences avec le Muay Thaï et le K1, et comment débuter en club.",
+    "Comprendre le Kick Boxing : règles, différences avec le Muay Thaï et le K1, et comment débuter en club.",
+  keywords: [
+    "kick boxing",
+    "kick-boxing",
+    "kick boxing vs muay thaï",
+    "kick boxing vs k1",
+    "cours kick boxing",
+    "règles kick boxing",
+  ],
   alternates: { canonical: `${siteConfig.url}/kick-boxing` },
 };
 

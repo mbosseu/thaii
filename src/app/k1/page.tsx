@@ -4,8 +4,17 @@ import { PageHero } from "@/components/PageHero";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "K1",
-  description: "K1 rules : kick-boxing moderne de galas, rythme élevé, clinch court.",
+  title: "K1 : règles, style et différences avec le Kick Boxing",
+  description:
+    "Le K1 (K-1) expliqué : kick-boxing de galas, rythme élevé, clinch court — différences avec le Kick Boxing et le Muay Thaï.",
+  keywords: [
+    "k1",
+    "k-1",
+    "règles k1",
+    "k1 vs kick boxing",
+    "k1 vs muay thaï",
+    "galas k1",
+  ],
   alternates: { canonical: `${siteConfig.url}/k1` },
 };
 
